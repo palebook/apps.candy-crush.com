@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candy crush saga</title>
+  <link rel="icon" href="https://i.postimg.cc/43357HMy/latest(10).png" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+    }
+    .topbar {
+      height: 58px;
+      background: #375a9b;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+      gap: 10px;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 3px;
+      padding: 4px 8px;
+      width: 350px;
+      border: 1px solid #d0d0d0;
+    }
+    .search-box img {
+      width: 20px;
+      margin-right: 6px;
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 14px;
+    }
+    .icons {
+      margin-left: auto;
+      display: flex;
+      gap: 20px;
+    }
+    .icons img {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    .sidebar {
+      width: 366px;
+      float: left;
+      height: calc(100vh - 58px);
+      background: transparent;
+    }
+    .content {
+      margin-left: 366px;
+      height: calc(100vh - 58px);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <img src="https://i.postimg.cc/W4ytmq6y/fb.png" style="width:32px;margin-right:15px;cursor:pointer;" />
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Rechercher..." onkeydown="if(event.key==='Enter') search()" />
+    </div>
+
+    <div class="icons">
+      <img src="https://i.postimg.cc/FHwtDmQ2/Download-from-pngedits-com-1111.png" onclick="window.location.href='https://www.facebook.com/messages/'" />
+
+      <img src="https://i.postimg.cc/NF0YZ4PK/dfrgtjhk.png" style="width:32px;height:32px;cursor:pointer;" onclick="window.location.href='https://www.facebook.com/notifications'" />
+    </div>
+  </div>
+
+  <div class="sidebar"></div>
+
+  <div class="content">
+    <iframe src="https://candycrush-flash.github.io/"></iframe>
+  </div>
+
+  <script>
+    function search() {
+      const v = document.getElementById('searchInput').value;
+      if(v.trim() !== '') {
+        window.location.href = "https://www.facebook.com/search/top?q=" + encodeURIComponent(v);
+      }
+    }
+  </script>
+</body>
+</html>
